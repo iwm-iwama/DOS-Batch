@@ -1,11 +1,11 @@
-�yRuby��DOS�o�b�`�t�@�C�����쐬�z20190814
+【RubyでDOSバッチファイルを作成】20190814
 
-�E�{�\���́ADOS�o�b�`�t�@�C����Ruby��g�ݍ��݁A
-�@�Ⴆ�΁uruby.exe sample.rb�v�ł͂Ȃ��usample.bat�v�Ƃ��Ď��s���܂��B
+・本構成は、DOSバッチファイルにRubyを組み込み、
+　例えば「ruby.exe sample.rb」ではなく「sample.bat」として実行します。
 
-�E�X�^���h�A�������ɂ�����e�L�X�g������z�肵�A�O���R�}���h�ŏ�����⊮�\�ł��B
+・スタンドアロン環境におけるテキスト処理を想定し、外部コマンドで処理を補完可能です。
 
-�EActiveRuby1.8.7[*1]���g�p���A�uruby.exe�v�umsvcrt-ruby18.dll�v�̂Q�t�@�C���œ��삵�܂��B
-�@�e�탉�C�u�����t�@�C���ifileutil.rb, find.rb, nkf.so ���j�ɂ��@�\�̊g�����\�ł��B
+・ActiveRuby1.8.7[*1]を使用し、「ruby.exe」「msvcrt-ruby18.dll」の２ファイルで動作します。
+　各種ライブラリファイル（fileutil.rb, find.rb, nkf.so 等）により機能の拡張が可能です。
 
-�@�@[*1] https://www.artonx.org/data/asr/
+　　[*1] https://www.artonx.org/data/asr/
