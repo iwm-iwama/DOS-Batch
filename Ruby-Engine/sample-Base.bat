@@ -33,11 +33,9 @@ puts Time.now.strftime("%Y-%m-%d %H:%M:%S %a")
 puts %x(./ruby -v).strip
 puts
 
-p Msg1
 puts Msg1
-puts
 
-p a1 = Msg2.split("\n")
+a1 = Msg2.split("\n")
 a1.each do
 	|e|
 	puts e
