@@ -10,7 +10,7 @@ goto R9
 # https://www.artonx.org/data/asr/
 #-----------------------------------
 
-VERSION = "iwm20200323 for Ruby1.8"
+VERSION = "iwm20200419 for Ruby1.8"
 
 Signal.trap(:INT) do
 	exit
@@ -24,8 +24,8 @@ HELP = <<EOD
 |    q        I—¹                                |
 |    r        Ä‹N“®                              |
 |    a        •Ï”ˆê——                            |
-|    c        •Ï”‘SÁ‹Ž                          |
-|    cn       •Ï”[n]Á‹Ž  c0, c1...              |
+|    d        •Ï”‘SÁ‹Ž                          |
+|    dn       •Ï”[n]Á‹Ž  d0, d1...              |
 |  Space > ª or «  “ü—Í—š—ð                     |
 ---------------------------------------------------
 |y”Ž®z                                         |
@@ -62,11 +62,11 @@ def main()
 		system "clear"
 	end
 
-	printf("\e[32m\e[44m")
+	print "\e[1;32m\e[44m"
 		puts " Ver.#{VERSION} "
-	printf("\e[37m\e[44m")
+	print "\e[0;37m\e[44m"
 		puts HELP
-	printf("\e[39m\e[49m")
+	print "\e[49m"
 
 	print "> "
 	while (line = STDIN.gets.strip)
@@ -112,11 +112,11 @@ def main()
 				end
 				line = ""
 
-			when "c", "C"
+			when "d", "D"
 				$AryVar = []
 				line = ""
 
-			when /c\d+/i
+			when /d\d+/i
 				$AryVar.delete_at(line[1 .. -1].to_i)
 				_i1 = 0
 				$AryVar.each do
