@@ -1,16 +1,15 @@
 @echo off
-cls
-call .\ruby.exe -Sx -Ks %0 %*
-goto R9
+@cls
+@ruby -x "%~f0" %*
+@exit /b
 
-:R0
 #!ruby
 #-----------------------------------
 # for ActiveScriptRuby 1.8.7
 # https://www.artonx.org/data/asr/
 #-----------------------------------
 
-VERSION = "iwm20200419 for Ruby1.8"
+VERSION = "iwm20200427 for Ruby1.8"
 
 Signal.trap(:INT) do
 	exit
@@ -139,9 +138,4 @@ def main()
 end
 
 main()
-exit
-__END__
-
-:R9
-echo.
 exit

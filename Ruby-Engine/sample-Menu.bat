@@ -1,21 +1,13 @@
 @echo off
-cls
-call .\ruby.exe -Sx -Ks %0 %*
-goto R9
+@cls
+@ruby -x "%~f0" %*
+@exit /b
 
-:R0
 #!ruby
 #-----------------------------------
 # for ActiveScriptRuby 1.8.7
 # https://www.artonx.org/data/asr/
 #-----------------------------------
-
-# İ’è‚±‚±‚©‚ç
-# «««««««««««««««««««««««««««««
-
-
-# ªªªªªªªªªªªªªªªªªªªªªªªªªªªªª
-# İ’è‚±‚±‚Ü‚Å
 
 Signal.trap(:INT) do
 	exit
@@ -58,9 +50,4 @@ while cmd == 0
 	system %(pause)
 end
 
-exit
-__END__
-
-:R9
-echo.
 exit

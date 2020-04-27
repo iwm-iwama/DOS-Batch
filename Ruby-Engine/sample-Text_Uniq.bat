@@ -1,9 +1,10 @@
 @echo off
-cls
-call .\ruby.exe -Sx -Ks %0 %*
-goto R9
+@cls
+@ruby -x "%~f0" %*
+@echo.
+@pause
+@exit /b
 
-:R0
 #!ruby
 #-----------------------------------
 # for ActiveScriptRuby 1.8.7
@@ -81,10 +82,4 @@ puts "[クリップボードにコピー済]"
 	File.delete tFn
 puts
 
-exit
-__END__
-
-:R9
-echo.
-pause
 exit
