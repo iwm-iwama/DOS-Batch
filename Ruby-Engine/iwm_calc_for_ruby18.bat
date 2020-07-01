@@ -138,4 +138,3 @@ def main()
 end
 
 main()
-exit

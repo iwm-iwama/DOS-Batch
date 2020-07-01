@@ -49,5 +49,3 @@ while cmd == 0
 	puts
 	system %(pause)
 end
-
-exit

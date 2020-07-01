@@ -81,5 +81,3 @@ puts "[クリップボードにコピー済]"
 	system %(clip.exe < #{tFn})
 	File.delete tFn
 puts
-
-exit

@@ -64,5 +64,3 @@ File.open(OFn, "wb") do
 	|fs|
 	fs.write $rtn
 end
-
-exit

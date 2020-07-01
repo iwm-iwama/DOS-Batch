@@ -42,5 +42,3 @@ SubStatus()
 
 p %x(iwm_MsgBox.exe -text="#{Result}" -button=1,0)
 SubStatus()
-
-exit

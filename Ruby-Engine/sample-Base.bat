@@ -41,5 +41,3 @@ a1.each do
 	|e|
 	puts e
 end
-
-exit

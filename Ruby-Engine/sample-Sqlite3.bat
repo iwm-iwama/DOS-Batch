@@ -81,5 +81,3 @@ puts $rtn = NKF.nkf("-s -x -Lw", sUtf8)
 #	oFs.write $rtn
 #end
 #
-
-exit
