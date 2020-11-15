@@ -37,7 +37,7 @@ end
 p %x(iwm_MsgBox.exe)
 SubStatus()
 
-p %x(iwm_MsgBox.exe -size=300,160 -title="タ\=イ ト=ル" -text="#{Msg}" -button=1,1)
+p %x(iwm_MsgBox.exe -size=300,160 -title="タ\=イ ト=ル" -text="#{Msg}" -button=1,1 -checkbox="上記内容を承諾します。")
 SubStatus()
 
 p %x(iwm_MsgBox.exe -text="#{Result}" -button=1,0)
