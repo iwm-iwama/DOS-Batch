@@ -16,15 +16,12 @@ Signal.trap(:INT) do
 end
 
 # -help
-system "iwm_FileDialog.exe -h"
+%x(iwm_FileDialog.exe -h)
 
 # -nameonly
 while true
 	s1 = %x(iwm_FileDialog.exe -no)
-	if s1.size == 0
-		break 
-	else
-		puts s1.split("\t").join("\n")
-	end
+	break if s1.size == 0
+	puts s1.split("\t").join("\n")
 	puts
 end

@@ -19,4 +19,5 @@ while true
 	s1 = %x(iwm_DirDialog.exe)
 	break if s1.size == 0
 	puts s1
+	puts
 end
