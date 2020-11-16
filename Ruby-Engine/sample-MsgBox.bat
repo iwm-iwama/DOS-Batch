@@ -15,10 +15,10 @@
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 Msg = <<'EOD' # 非展開
-あああ\\ああ^\tいい\いいい
-ううううう^\n^\n
-えええええ\nkf
-おおおおお
+あああ\\ああ\\\tいい\いいい
+ううううう\\n\\n
+えええええ\nkf\
+\tおおおおお
 EOD
 
 Result = %x(dir .)
@@ -38,7 +38,7 @@ end
 puts %x(iwm_MsgBox.exe)
 SubStatus()
 
-puts %x(iwm_MsgBox.exe -size=300,160 -title="タ\=イ ト=ル" -text="#{Msg}" -button=1,1 -checkbox="上記内容を承諾します。")
+puts %x(iwm_MsgBox.exe -size=300,160 -title="タイトル" -text="#{Msg}" -button=1,1 -checkbox="上記内容を承諾します。")
 SubStatus()
 
 puts %x(iwm_MsgBox.exe -text="#{Result}" -button=1,0)
