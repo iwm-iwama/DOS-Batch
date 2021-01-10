@@ -9,7 +9,7 @@
 # https://www.artonx.org/data/asr/
 #-----------------------------------
 
-VERSION = "iwm20200427 for Ruby1.8"
+VERSION = "iwm20210108 for Ruby1.8"
 
 Signal.trap(:INT) do
 	exit
@@ -61,11 +61,8 @@ def main()
 		system "clear"
 	end
 
-	print "\e[1;32m\e[44m"
-		puts " Ver.#{VERSION} "
-	print "\e[0;37m\e[44m"
-		puts HELP
-	print "\e[49m"
+	puts "\e[0;92;44m Ver.#{VERSION} "
+	print "\e[0;97;44m#{HELP}\e[0;99m"
 
 	print "> "
 	while (line = STDIN.gets.strip)
