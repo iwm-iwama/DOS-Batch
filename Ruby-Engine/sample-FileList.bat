@@ -1,8 +1,6 @@
 @echo off
 @cls
 @ruby -x "%~f0" %*
-@echo.
-@pause
 @exit /b
 
 #!ruby
@@ -11,13 +9,13 @@
 # https://www.artonx.org/data/asr/
 #-----------------------------------
 
-# è¨­å®šã“ã“ã‹ã‚‰
-# â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“
+# İ’è‚±‚±‚©‚ç
+# «««««««««««««««««««««««««««««
 
 FromDir = %q(..)
 
-# â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘
-# è¨­å®šã“ã“ã¾ã§
+# ªªªªªªªªªªªªªªªªªªªªªªªªªªªªª
+# İ’è‚±‚±‚Ü‚Å
 
 Signal.trap(:INT) do
 	exit
@@ -25,27 +23,35 @@ end
 
 require 'find'
 
-a1 = []
+def
+main()
+	# EscF‚ğg‚¤‚¨‚Ü‚¶‚È‚¢
+	system "cls"
 
-# Dir/Fileãƒªã‚¹ãƒˆ
-Find.find(FromDir) do
-	|fn|
-	fn = File.expand_path(fn).gsub("/", "\\")
-	if File.directory?(fn)
-		fn += "\\"
+	a1 = []
+
+	# Dir/FileƒŠƒXƒg
+	Find.find(FromDir) do
+		|_s|
+		_s = File.expand_path(_s).gsub("/", "\\")
+		if File.directory?(_s)
+			_s = "\e[0;96m#{_s}\\\e[0;99m"
+		end
+		a1 << _s
 	end
-	a1 << fn
+
+	# ‘å•¶šE¬•¶š‚ğ‹æ•Ê‚µ‚È‚¢
+	a1.sort! do
+		|_1, _2|
+		rtn = _1.casecmp(_2)
+		rtn == 0 ? _1 <=> _2 : rtn
+	end
+
+	# •\¦
+	a1.each do
+		|_s|
+		puts _s
+	end
 end
 
-# å¤§æ–‡å­—ãƒ»å°æ–‡å­—ã‚’åŒºåˆ¥ã—ãªã„
-a1.sort! do
-	|s1, s2|
-	rtn = s1.casecmp(s2)
-	rtn == 0 ? s1 <=> s2 : rtn
-end
-
-# è¡¨ç¤º
-a1.each do
-	|e|
-	puts e
-end
+main()

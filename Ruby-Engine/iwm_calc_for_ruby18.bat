@@ -9,7 +9,7 @@
 # https://www.artonx.org/data/asr/
 #-----------------------------------
 
-VERSION = "iwm20210108 for Ruby1.8"
+VER = "iwm20210401 for Ruby1.8"
 
 Signal.trap(:INT) do
 	exit
@@ -53,15 +53,15 @@ HELP = <<EOD
 ---------------------------------------------------
 EOD
 
-def main()
+def
+main()
 	$AryVar = []
 	$Exec = ""
 
-	if ! system "cls"
-		system "clear"
-	end
+	# EscF‚ðŽg‚¤‚¨‚Ü‚¶‚È‚¢
+	system "cls"
 
-	puts "\e[0;92;44m Ver.#{VERSION} "
+	puts "\e[0;92;44m Ver.#{VER} "
 	print "\e[0;97;44m#{HELP}\e[0;99m"
 
 	print "> "
@@ -71,8 +71,8 @@ def main()
 				begin
 					_s1 = ""
 					$AryVar.each do
-						|s|
-						_s1 << s + ";"
+						|_s|
+						_s1 << _s + ";"
 					end
 					_s1 << $Exec
 
@@ -102,8 +102,8 @@ def main()
 			when "a", "A"
 				_i1 = 0
 				$AryVar.each do
-					|s|
-					printf("[%d] %s\n", _i1, s)
+					|_s|
+					printf("[%d] %s\n", _i1, _s)
 					_i1 += 1
 				end
 				line = ""
@@ -116,8 +116,8 @@ def main()
 				$AryVar.delete_at(line[1 .. -1].to_i)
 				_i1 = 0
 				$AryVar.each do
-					|s|
-					printf("[%d] %s\n", _i1, s)
+					|_s|
+					printf("[%d] %s\n", _i1, _s)
 					_i1 += 1
 				end
 				line = ""
